@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ButtonDrag : MonoBehaviour, IBeginDragHandler, IDragHandler
+public class ButtonChangeManager : MonoBehaviour, IBeginDragHandler, IDragHandler
 {
     /// <summary> Buttonの配列 </summary>
     [SerializeField] GameObject[] m_buttons = null;
