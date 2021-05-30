@@ -3,47 +3,68 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Animator))]
+
+/// <summary>
+/// ButtonによってPanelの表示非表示を管理する基底クラス
+/// ・PanelにAnimatorをアタッチする
+/// </summary>
 public class PanelManager : MonoBehaviour
 {
-    /// <summary> Panelを開くボタン </summary>
-    [SerializeField] Button[] m_openButton = null;
-    /// <summary> Panleを閉じるボタン </summary>
-    [SerializeField] Button[] m_closeButton = null;
-    /// <summary> 開閉するPanel </summary>
-    [SerializeField] RectTransform[] m_panel = null;
+    /// <summary> ButtonとPanelの情報 </summary>
+    [SerializeField] PanelAnimationData[] m_data = null;
 
-    Animator m_animator;
-
-    void Start()
+    void Awake()
     {
-        SetButtonOnClick();
+        SetGameObjectInfo();
     }
 
-    void SetButtonOnClick()
+    /// <summary>
+    /// ButtonとPanelに必要な物を初期化する
+    /// </summary>
+    void SetGameObjectInfo()
     {
-        for (int i = 0; i < m_openButton.Length; i++)
+        for (int i = 0; i < m_data.Length; i++)
         {
             int value = i;
-            m_openButton[i].onClick.AddListener(() => OnClickOpenPanel(value));
+            m_data[value].m_openButton.GetComponent<Button>()
+                .onClick.AddListener(() => OnClickOpenPanel(value));
+            m_data[value].m_closeButton.GetComponent<Button>()
+                .onClick.AddListener(() => OnClickClosePanle(value));
+            m_data[value].m_panel.GetComponent<RectTransform>();
+            m_data[value].m_panelAnimator = m_data[value].m_panel.GetComponent<Animator>();
         }
 
-        for (int i = 0; i < m_closeButton.Length; i++)
-        {
-            int value = i;
-            m_closeButton[i].onClick.AddListener(() => OnClickClosePanle(value));
-        }
     }
 
+    /// <summary>
+    /// Panelを開く時の処理
+    /// </summary>
+    /// <param name="i"></param>
     public virtual void OnClickOpenPanel(int i)
     {
-        m_panel[i].localScale = Vector2.one;
+        m_data[i].m_panelAnimator.Play("Open");
         Debug.Log("Buttonが押されました。");
     }
 
+    /// <summary>
+    /// Panelを閉じるときの処理
+    /// </summary>
+    /// <param name="i"></param>
     public virtual void OnClickClosePanle(int i)
     {
-        m_panel[i].localScale = Vector2.zero;
+        m_data[i].m_panelAnimator.Play("Close");
         Debug.Log("Buttonが押されました。");
     }
+}
+
+/// <summary>
+/// ButtonとPanelの情報を所持するクラス
+/// </summary>
+[System.Serializable]
+public class PanelAnimationData
+{
+    public GameObject m_openButton;
+    public GameObject m_closeButton;
+    public GameObject m_panel;
+    public Animator m_panelAnimator;
 }
