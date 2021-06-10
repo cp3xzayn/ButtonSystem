@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 1963586265}
   - component: {fileID: 1963586264}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: BattleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,12 +435,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44151a762ca0aad418caeb1112942d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_randomNum: 3
-  m_enemyTypeNum: 2
-  eneAttack: 0
+  m_randomNum: 0
+  m_enemyTypeNum: 5
   m_enemyData: {fileID: 11400000, guid: 2de82bf8dde5e5744b0821218746bb93, type: 2}
-  m_playerHP: 10
+  m_eneName: EnemyA
+  m_eneHP: 5
+  m_eneAttack: 1
+  m_eneDefense: 1
+  m_playerName: Player
+  m_playerHP: 1
   m_playerAttack: 5
+  m_playerDefense: 1
 --- !u!4 &1963586265
 Transform:
   m_ObjectHideFlags: 0

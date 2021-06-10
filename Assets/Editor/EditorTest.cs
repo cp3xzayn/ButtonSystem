@@ -8,11 +8,15 @@ public class EditorTest : Editor
     {
         base.OnInspectorGUI();
 
-        BattleManager randomNum = target as BattleManager;
+        BattleManager battleManager = target as BattleManager;
 
         if (GUILayout.Button("敵を生成"))
         {
-            randomNum.SendMessage("EnemyGenerate", null, SendMessageOptions.DontRequireReceiver);
+            battleManager.SendMessage("EnemyGenerate", null, SendMessageOptions.DontRequireReceiver);
+        }
+        if (GUILayout.Button("バトル開始"))
+        {
+            battleManager.SendMessage("BattleStart", null, SendMessageOptions.DontRequireReceiver);
         }
     }
 }

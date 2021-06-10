@@ -21,3 +21,15 @@ MonoBehaviour:
     hp: 10
     attack: 2
     defense: 1
+  - name: EnemyC
+    hp: 15
+    attack: 3
+    defense: 2
+  - name: EnemyD
+    hp: 15
+    attack: 5
+    defense: 1
+  - name: EnemyE
+    hp: 20
+    attack: 3
+    defense: 1
