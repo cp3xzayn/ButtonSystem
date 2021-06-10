@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+>
+
+    <engine:Box class="example_box">
+        <engine:Button text="Example Button" name="button01"/>
+        <engine:Label text="Example Label" class="example_label" binding-path="m_bindingText"/>
+    </engine:Box>
+
+</engine:UXML>

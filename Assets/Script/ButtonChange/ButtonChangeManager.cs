@@ -24,6 +24,8 @@ public class ButtonChangeManager : MonoBehaviour, IBeginDragHandler, IDragHandle
     float m_changedScaleY;
 
 
+    [SerializeField] string m_log = null;
+
     void Start()
     {
         for (int i = 0; i < m_buttons.Length; i++)
@@ -32,7 +34,6 @@ public class ButtonChangeManager : MonoBehaviour, IBeginDragHandler, IDragHandle
             m_buttons[i].GetComponent<Button>().onClick.AddListener(() => OnClickButton(value));
         }
     }
-
 
     void Update()
     {

@@ -1,0 +1,7 @@
+﻿example_box {
+    width: 200px;
+}
+
+.example_label {
+    color: red;
+}
