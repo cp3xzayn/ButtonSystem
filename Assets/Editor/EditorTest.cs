@@ -18,5 +18,9 @@ public class EditorTest : Editor
         {
             battleManager.SendMessage("BattleStart", null, SendMessageOptions.DontRequireReceiver);
         }
+        if (GUILayout.Button("リセット"))
+        {
+            battleManager.SendMessage("ResetStatus", null, SendMessageOptions.DontRequireReceiver);
+        }
     }
 }

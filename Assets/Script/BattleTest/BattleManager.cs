@@ -9,7 +9,7 @@ public class BattleManager : MonoBehaviour
     /// <summary> ランダムで敵を生成する時管理するためのint </summary>
     [SerializeField] private int m_randomNum;
     /// <summary> 敵の種類の数 </summary>
-    [SerializeField] private int m_enemyTypeNum = 5;
+    [Header("敵の種類") ,SerializeField] private int m_enemyTypeNum = 5;
 
     /// <summary> EnemyData </summary>
     [SerializeField] EnemyData m_enemyData = null;
@@ -26,6 +26,9 @@ public class BattleManager : MonoBehaviour
     [SerializeField] int m_playerAttack = 5;
     [SerializeField] int m_playerDefense = 1;
 
+    //それぞれのステータスの初期値
+    int m_baseEneHP = 0;
+    int m_basePlayerHP = 10;
 
     /// <summary>
     /// 敵を生成する関数
@@ -88,5 +91,14 @@ public class BattleManager : MonoBehaviour
         }
         Debug.Log($"敵のの攻撃、攻撃力:{m_eneAttack}");
         Debug.Log($"PlayerのHP:{m_playerHP}");
+    }
+
+    /// <summary>
+    /// バトルをリセットする関数
+    /// </summary>
+    private void ResetStatus()
+    {
+        m_playerHP = m_basePlayerHP;
+        m_eneHP = m_baseEneHP;
     }
 }
