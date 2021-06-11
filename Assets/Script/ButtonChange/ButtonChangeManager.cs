@@ -23,9 +23,6 @@ public class ButtonChangeManager : MonoBehaviour, IBeginDragHandler, IDragHandle
     /// <summary> 変更後のYサイズ </summary>
     float m_changedScaleY;
 
-
-    [SerializeField] string m_log = null;
-
     void Start()
     {
         for (int i = 0; i < m_buttons.Length; i++)

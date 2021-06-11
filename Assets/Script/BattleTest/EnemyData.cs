@@ -10,6 +10,9 @@ public class EnemyData : ScriptableObject
     public List<EnemyStatus> EnemyStatusList = new List<EnemyStatus>();
 }
 
+/// <summary>
+/// 敵の情報
+/// </summary>
 [Serializable]
 public class EnemyStatus
 {

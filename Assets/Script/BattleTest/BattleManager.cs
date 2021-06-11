@@ -90,7 +90,7 @@ public class BattleManager : MonoBehaviour
             }
         }
         Debug.Log($"敵のの攻撃、攻撃力:{m_eneAttack}");
-        Debug.Log($"PlayerのHP:{m_playerHP}");
+        Debug.Log($"{m_playerName}のHP:{m_playerHP}");
     }
 
     /// <summary>

@@ -435,15 +435,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44151a762ca0aad418caeb1112942d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_randomNum: 0
+  m_randomNum: 1
   m_enemyTypeNum: 5
   m_enemyData: {fileID: 11400000, guid: 2de82bf8dde5e5744b0821218746bb93, type: 2}
-  m_eneName: EnemyA
-  m_eneHP: 5
-  m_eneAttack: 1
+  m_eneName: EnemyB
+  m_eneHP: 0
+  m_eneAttack: 2
   m_eneDefense: 1
   m_playerName: Player
-  m_playerHP: 1
+  m_playerHP: 7
   m_playerAttack: 5
   m_playerDefense: 1
 --- !u!4 &1963586265
